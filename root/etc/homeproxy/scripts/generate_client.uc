@@ -30,6 +30,7 @@ uci.load(uciconfig);
 
 const uciinfra = 'infra',
       ucimain = 'config',
+      uciexp = 'experimental',
       ucicontrol = 'control';
 
 const ucidnssetting = 'dns',
@@ -891,15 +892,15 @@ if (routing_mode in ['bypass_mainland_china', 'custom']) {
 			path: RUN_DIR + '/cache.db',
 			store_rdrc: (cache_file_store_rdrc === '1') || null,
 			rdrc_timeout: cache_file_rdrc_timeout ? (cache_file_rdrc_timeout + 's') : null,
-		}
-
+		},
  		clash_api: {
  			external_controller: (enable_clash_api === '1') ? external_controller : null,
  			external_ui: external_ui,
  			external_ui_download_url: external_ui_download_url,
  			external_ui_download_detour: external_ui_download_detour,
  			secret: secret,
- 			default_mode: default_mode
+ 			default_mode: default_mode,
+              }
 	};
 }
 /* Experimental end */
