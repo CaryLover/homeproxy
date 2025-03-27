@@ -1236,9 +1236,9 @@ return view.extend({
  			delete this.keylist;
  			delete this.vallist;
  
+ 			this.value('', _('Default'));
  			this.value('direct-out', _('Direct'));
- 			this.value('block-out', _('Block'));
- 			uci.sections(data[0], 'node', (res) => {
+ 			uci.sections(data[0], 'routing_node', (res) => {
  				this.value(res.label, res.label);
  			});
  
@@ -1246,14 +1246,15 @@ return view.extend({
  		}
  		so.depends('enable_clash_api', '1');
  
- 		so = ss.option(form.Value, 'default_mode', _('Default mode'),
+ 		/* so = ss.option(form.Value, 'default_mode', _('Default mode'),
  			_('Default mode in clash, <code>Rule</code> will be used if none.'));
  		so.value('', _('-- Please choose --'));
  		so.value('direct', 'Direct');
  		so.value('rule', 'Rule');
  		so.value('global', 'Global');
  		so.value('script', 'Script');
- 		so.depends('enable_clash_api', '1');
+ 		so.depends('enable_clash_api', '1');*/
+		
  		/* clash_api settings end */
 
 		/* ACL settings start */
